@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #f472b6;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-cartoon-border: #1f2937;
+}
+
+@layer utilities {
+  .cartoon-shadow {
+    box-shadow: 4px 4px 0px 0px var(--color-cartoon-border);
+  }
+  .cartoon-shadow-lg {
+    box-shadow: 6px 6px 0px 0px var(--color-cartoon-border);
+  }
+  .cartoon-border {
+    border: 3px solid var(--color-cartoon-border);
+  }
+}
+
+@layer components {
+  .cartoon-btn {
+    font-weight: 700;
+    border: 3px solid var(--color-cartoon-border);
+    box-shadow: 4px 4px 0px 0px var(--color-cartoon-border);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    background-color: var(--color-pink-400);
+    color: white;
+    border-radius: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .cartoon-btn:active {
+    transform: translate(0.25rem, 0.25rem);
+    box-shadow: none;
+  }
+  .cartoon-card {
+    background-color: white;
+    border: 3px solid var(--color-cartoon-border);
+    box-shadow: 4px 4px 0px 0px var(--color-cartoon-border);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+}
+
+body {
+  background-color: var(--color-pink-50);
+  color: #111827;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar for clean UI but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
